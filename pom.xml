@@ -17,7 +17,7 @@
 		<mule.maven.plugin.version>3.5.4</mule.maven.plugin.version>
 		<sonar.organization>somekey10</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		<sonar.sources>src/main/mule,src/test/resources,src/main/resources,/.github/workflows/,/</sonar.sources>
+		<sonar.sources>src/main/mule,src/test/resources,src/main/resources,/</sonar.sources>
 	</properties>
 
 	<build>
