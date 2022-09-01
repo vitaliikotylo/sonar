@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<ftp:config name="FTP_Config" doc:name="FTP Config" doc:id="60cbb3cf-deb4-4bc0-81ad-b0b99c7d29e9" >
-		<ftp:connection host="/"/>
+		<ftp:connection host="/" password="fake"/>
 	</ftp:config>
 	<flow name="sonarFlow" doc:id="24bf2026-6d0d-4afa-bc1f-f5e92b796a8c" >
 		<http:listener doc:name="Listener" doc:id="41aabad9-a9b9-4252-a2d7-0b847f962743" config-ref="HTTP_Listener_config" path="/sonar"/>
@@ -21,20 +21,4 @@ http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/
 		<ftp:copy doc:name="Copy" doc:id="98f83e76-200a-4245-a398-f3d78e5cabe2" config-ref="FTP_Config" sourcePath="/" targetPath="/"/>
 	</flow>
 	<!-- TODO Drop this dependency -->
-	<beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
-      <property name="connectionFactories">
-          <list>
-              <bean class="org.springframework.social.twitter.connect.TwitterConnectionFactory">
-                  <constructor-arg value="username" />
-                  <constructor-arg value="very-secret-password" />   <!-- Sensitive -->
-              </bean>
-          </list>
-      </property>
-  </bean>
-</beans>
 </mule>
