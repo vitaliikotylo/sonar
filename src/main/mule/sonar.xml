@@ -19,6 +19,7 @@ http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/
     -->
 		<logger level="INFO" doc:name="Logger" doc:id="83997d5f-f569-49c7-9b79-b24db3daa455" />
 		<ftp:copy doc:name="Copy" doc:id="98f83e76-200a-4245-a398-f3d78e5cabe2" config-ref="FTP_Config" sourcePath="/" targetPath="/"/>
+		<logger level="INFO" doc:name="Logger" doc:id="fd327d85-fe6e-48f8-94ae-96dc79471345" />
 	</flow>
 	<!-- TODO Drop this dependency -->
 </mule>
