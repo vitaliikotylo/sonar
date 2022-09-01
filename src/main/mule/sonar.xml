@@ -21,5 +21,20 @@ http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/
 		<ftp:copy doc:name="Copy" doc:id="98f83e76-200a-4245-a398-f3d78e5cabe2" config-ref="FTP_Config" sourcePath="/" targetPath="/"/>
 	</flow>
 	<!-- TODO Drop this dependency -->
-	<application android:allowBackup="true"> <!-- Sensitive --></application>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="connectionFactoryLocator" class="org.springframework.social.connect.support.ConnectionFactoryRegistry">
+      <property name="connectionFactories">
+          <list>
+              <bean class="org.springframework.social.twitter.connect.TwitterConnectionFactory">
+                  <constructor-arg value="username" />
+                  <constructor-arg value="very-secret-password" />   <!-- Sensitive -->
+              </bean>
+          </list>
+      </property>
+  </bean>
+</beans>
 </mule>
