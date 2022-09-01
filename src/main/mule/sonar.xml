@@ -20,6 +20,9 @@ http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/
 	<ftp:config name="FTP_Config4" doc:name="FTP Config" doc:id="6ad78338-47ab-4a1a-8897-95fa96055ef6" >
 		<ftp:connection host="/" password="fake-fake-fake-fake"/>
 	</ftp:config>
+	<ftp:config name="FTP_Config5" doc:name="FTP Config" doc:id="1ceef854-7b55-4d7d-bc53-a1e3fca27cd3" >
+		<ftp:connection host="/" password="fake-fake-fake-fake-fake"/>
+	</ftp:config>	
 	<flow name="sonarFlow" doc:id="24bf2026-6d0d-4afa-bc1f-f5e92b796a8c" >
 		<http:listener doc:name="Listener" doc:id="41aabad9-a9b9-4252-a2d7-0b847f962743" config-ref="HTTP_Listener_config" path="/sonar"/>
 		<logger level="INFO" doc:name="Logger" doc:id="f90310ea-8459-4501-beef-114ca1eaac0d" />
